@@ -1,10 +1,11 @@
+using SchoolRepository.DTO;
 using SchoolRepository.Models;
 
 namespace SchoolRepository.Interfaces;
 
 public interface ICoursesRepository
 {
-  Task<IEnumerable<Course>> GetAll();
+  Task<List<Course>> GetAll();
   Task<Course> GetbyIdAsync(Guid Id);
   Task<Course> GetbyIdAsyncNoTracking(Guid Id);
   bool Add(Course course);

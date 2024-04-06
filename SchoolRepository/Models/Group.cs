@@ -9,6 +9,7 @@ public partial class Group
     [Key]
     public Guid Id { get; set; }
     public string? Name { get; set; } = null;
+    public ICollection<Coursegroup> Coursegroups { get; set; }
     public DateTime Created { get; set; }
     public DateTime Modified { get; set; }
     public bool Enabled { get; set; }

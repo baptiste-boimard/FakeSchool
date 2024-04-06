@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using SchoolRepository.DTO;
 using SchoolRepository.Interfaces;
 
 namespace SchoolRepository.Controllers;

@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SchoolRepository.Data;
+using SchoolRepository.DTO;
 using SchoolRepository.Interfaces;
 using SchoolRepository.Models;
 
@@ -14,17 +15,55 @@ public class StudentsRepository : IStudentsRepository
     _context = context;
   }
 
-  public async Task<IEnumerable<Student>> GetAll()
+  public async Task<List<StudentDTO>> GetAll()
   {
-    return await _context.Students.Include(i => i.Group).OrderBy(i => i.Id).ToListAsync();
+
+    return await _context.Students
+      .Select(student => new StudentDTO
+      {
+        Id = student.Id,
+        Name = student.Name,
+        Birthday = student.Birthday,
+        Group = new GroupDTO
+        {
+          Id = student.Group.Id,
+          Name = student.Group.Name,
+        },
+        Course = _context.Coursegroups
+          .Where(cg => cg.GroupsId == student.GroupId)
+          .SelectMany(cg => _context.Courses.Where(course => course.Id == cg.CoursesId))
+          .Select(course => new CourseDTO 
+          {
+            Id = course.Id,
+            Name = course.Name,
+            Date = course.Date,
+          }).ToList()
+      })
+      .ToListAsync();
+      
   }
 
-  public async Task<Student> GetbyIdAsyncNoTracking(Guid id)
+  public async Task<StudentDTO?> GetbyIdAsyncNoTracking(Guid id)
   {
-    return await _context.Students.Include(i => i.Group).AsNoTracking().FirstOrDefaultAsync(i => i.Id == id);
+    return await _context.Students
+      .Where(student => student.Id == id)
+      .Select(student => new StudentDTO
+        {
+          Id = student.Id,
+          Name = student.Name,
+          Birthday = student.Birthday,
+          Group = new GroupDTO
+          {
+            Id = student.Group.Id,
+            Name = student.Group.Name,
+          }
+        }
+      )
+      .AsNoTracking()
+      .FirstOrDefaultAsync();
   }
 
-  public Task<Student> GetbyIdAsync(Guid Id)
+  public Task<Student> GetbyIdAsync(Guid id)
   {
     throw new NotImplementedException();
   }

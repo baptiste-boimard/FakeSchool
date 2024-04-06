@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SchoolRepository.Data;
+using SchoolRepository.DTO;
 using SchoolRepository.Interfaces;
 using SchoolRepository.Models;
 
@@ -13,7 +14,7 @@ public class CoursesRepository : ICoursesRepository
   {
     _context = context;
   }
-  public async Task<IEnumerable<Course>> GetAll()
+  public async Task<List<Course>> GetAll()
   {
     return await _context.Courses.ToListAsync();
   }
