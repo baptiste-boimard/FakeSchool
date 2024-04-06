@@ -19,6 +19,11 @@
             Tous les groupes
             </summary>
         </member>
+        <member name="M:SchoolRepository.Controllers.GroupsController.GetbyIdAsync(System.Guid)">
+            <summary>
+            Un groupe
+            </summary>
+        </member>
         <member name="M:SchoolRepository.Controllers.StudentsController.GetAll">
             <summary>
             Tous les étudiants

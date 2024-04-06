@@ -31,5 +31,23 @@ public class GroupsController : Controller
     }
   }
   
+  /// <summary>
+  /// Un groupe
+  /// </summary>
+  [HttpGet]
+  [Route("/v1/Groups/{id}")]
+  public async Task<IActionResult> GetbyIdAsync(Guid id)
+  {
+    try
+    {
+      var response = await _groupsRepository.GetbyIdAsync(id);
+      return Ok(response);
+    }
+    catch (Exception e)
+    {
+      Console.WriteLine(e);
+      throw;
+    }
+  }
   
 }

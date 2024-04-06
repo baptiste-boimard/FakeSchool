@@ -19,9 +19,9 @@ public class GroupsRepository : IGroupsRepository
     return await _context.Groups.OrderBy(i => i.Id).ToListAsync();
   }
 
-  public Task<Group> GetbyIdAsync(Guid Id)
+  public async Task<Group> GetbyIdAsync(Guid id)
   {
-    throw new NotImplementedException();
+    return await _context.Groups.FirstOrDefaultAsync(i => i.Id == id);
   }
 
   public Task<Group> GetbyIdAsyncNoTracking(Guid Id)
