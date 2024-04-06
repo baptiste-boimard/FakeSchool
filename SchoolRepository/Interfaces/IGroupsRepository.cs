@@ -1,6 +1,6 @@
 using SchoolRepository.Models;
 
-namespace SchoolRepository;
+namespace SchoolRepository.Interfaces;
 
 public interface IGroupsRepository
 {

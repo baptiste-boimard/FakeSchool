@@ -4,9 +4,29 @@
         <name>SchoolRepository</name>
     </assembly>
     <members>
-        <member name="M:SchoolRepository.Controllers.StudentController.GetAll">
+        <member name="M:SchoolRepository.Controllers.CoursesController.GetAll">
             <summary>
-            Information sur l'état de l'API
+            Tous les cours
+            </summary>
+        </member>
+        <member name="M:SchoolRepository.Controllers.CoursesController.GetbyIdAsync(System.Guid)">
+            <summary>
+            Un cour
+            </summary>
+        </member>
+        <member name="M:SchoolRepository.Controllers.GroupsController.GetAll">
+            <summary>
+            Tous les groupes
+            </summary>
+        </member>
+        <member name="M:SchoolRepository.Controllers.StudentsController.GetAll">
+            <summary>
+            Tous les étudiants
+            </summary>
+        </member>
+        <member name="M:SchoolRepository.Controllers.StudentsController.GetbyIdAsyncNoTracking(System.Guid)">
+            <summary>
+            Un étudiant
             </summary>
         </member>
     </members>

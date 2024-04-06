@@ -2,13 +2,16 @@ using System.Reflection;
 using Microsoft.EntityFrameworkCore;
 using SchoolRepository;
 using SchoolRepository.Data;
+using SchoolRepository.Interfaces;
 using SchoolRepository.Repositories;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllers();
-builder.Services.AddScoped<IStudentRepository, StudentRepository>();
+builder.Services.AddScoped<IStudentsRepository, StudentsRepository>();
+builder.Services.AddScoped<IGroupsRepository, GroupsRepository>();
+builder.Services.AddScoped<ICoursesRepository, CoursesRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(options =>
   {

@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/SchoolRepository.csproj": {}
+    "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/SchoolRepository.csproj": {}
   },
   "projects": {
-    "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/SchoolRepository.csproj": {
+    "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/SchoolRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/SchoolRepository.csproj",
+        "projectUniqueName": "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/SchoolRepository.csproj",
         "projectName": "SchoolRepository",
-        "projectPath": "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/SchoolRepository.csproj",
-        "packagesPath": "/home/punky/.nuget/packages/",
-        "outputPath": "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/obj/",
+        "projectPath": "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/SchoolRepository.csproj",
+        "packagesPath": "/home/baptiste/.nuget/packages/",
+        "outputPath": "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/punky/.nuget/NuGet/NuGet.Config"
+          "/home/baptiste/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -38,10 +38,6 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "dependencies": {
-            "EntityFramework": {
-              "target": "Package",
-              "version": "[6.4.4, )"
-            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[8.0.3, )"
@@ -84,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.202/PortableRuntimeIdentifierGraph.json"
         }
       }
     }
