@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>SchoolRepository</name>
+    </assembly>
+    <members>
+        <member name="M:SchoolRepository.Controllers.StudentController.GetAll">
+            <summary>
+            Information sur l'état de l'API
+            </summary>
+        </member>
+    </members>
+</doc>
