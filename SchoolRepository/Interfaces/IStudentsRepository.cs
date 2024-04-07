@@ -5,7 +5,7 @@ namespace SchoolRepository.Interfaces;
 
 public interface IStudentsRepository
 {
-  Task<List<StudentDTO>> GetAll();
+  Task<List<Student>> GetAll();
   Task<Student> GetbyIdAsync(Guid id);
   Task<StudentDTO?> GetbyIdAsyncNoTracking(Guid id);
   bool Add(Student student);

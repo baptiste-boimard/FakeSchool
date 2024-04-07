@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using SchoolRepository.DTO;
 using SchoolRepository.Migration;
 using SchoolRepository.Models;
 
@@ -17,11 +18,11 @@ public partial class FakeschoolContext : DbContext
 
     public virtual DbSet<Course> Courses { get; set; }
 
-    public virtual DbSet<Coursegroup> Coursegroups { get; set; }
+    public virtual List<Coursegroup> Coursegroups { get; set; }
 
     public virtual DbSet<Efmigrationshistory> Efmigrationshistories { get; set; }
-
     public virtual DbSet<Group> Groups { get; set; }
+
 
     public virtual DbSet<Student> Students { get; set; }
 
