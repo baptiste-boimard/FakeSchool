@@ -50,7 +50,7 @@ public class GroupsRepository : IGroupsRepository
     throw new NotImplementedException();
   }
 
-  public static GroupDTO ToDTO(Group group, IEnumerable<Course> courses)
+  public static GroupDTO ToDTO(Group group, IEnumerable<Course>? courses)
   {
     return (new GroupDTO
     {
@@ -59,4 +59,14 @@ public class GroupsRepository : IGroupsRepository
       Courses = courses.Select(CoursesRepository.ToDTO).ToArray()
     });
   }
+
+  public static GroupWithoutCoursesDTO ToDoWithoutCoursesDTO(Group group)
+  {
+    return (new GroupWithoutCoursesDTO
+    {
+      Id = group.Id,
+      Name = group.Name,
+    });
+  }
+  
 }

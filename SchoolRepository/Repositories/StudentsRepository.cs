@@ -16,7 +16,7 @@ public class StudentsRepository : IStudentsRepository
     _context = context;
   }
 
-  public static StudentDTO ToDTO(Student student, Group group, IEnumerable<Course> courses)
+  public static StudentDTO ToDTO(Student student, Group group, IEnumerable<Course>? courses)
   {
     return (new StudentDTO
     {
@@ -27,24 +27,30 @@ public class StudentsRepository : IStudentsRepository
     });
   }
   
-  public IEnumerable<StudentDTO> GetAll()
+  public static StudentArrayDTO ToWithoutCoursesDTO(Student student, Group group)
+  {
+    return (new StudentArrayDTO
+    {
+      Id = student.Id,
+      Name = student.Name,
+      Surname = student.Surname,
+      Group = GroupsRepository.ToDoWithoutCoursesDTO(group)
+    });
+  }
+  
+  public Task<IEnumerable<StudentArrayDTO>> GetAll()
   {
     var r = _context.Students.Join(_context.Groups, i => i.GroupId, i => i.Id, (s, g) => new
       {
         Student = s,
         Group = g
-      })
-      .Select(i => new
-      {
-        Student = i.First().Student,
-        Group = i.First().Group,
-      }).Select(i => ToDTO(i.Student, i.Group, null))
-      .OrderBy(i => i.Student.Id);
+      }).OrderBy(i=>i.Student.Id)
+      .Select(i => ToWithoutCoursesDTO(i.Student, i.Group));
 
-    return r;
+    return Task.FromResult<IEnumerable<StudentArrayDTO>>(r) ;
   }
 
-  public async Task<IEnumerable<StudentDTO>> GetbyIdAsyncNoTracking(Guid id)
+  public Task<IEnumerable<StudentDTO>> GetbyIdAsyncNoTracking(Guid id)
   {
     var r =  _context.Students
       .Where(i => i.Id == id)
@@ -75,7 +81,7 @@ public class StudentsRepository : IStudentsRepository
       })
       .Select(i => ToDTO(i.Student, i.Group, i.Courses));
     
-    return r;
+    return Task.FromResult(r);
 
   }
 
