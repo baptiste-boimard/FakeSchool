@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/SchoolRepository.csproj": {}
+    "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/SchoolRepository.csproj": {}
   },
   "projects": {
-    "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/SchoolRepository.csproj": {
+    "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/SchoolRepository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/SchoolRepository.csproj",
+        "projectUniqueName": "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/SchoolRepository.csproj",
         "projectName": "SchoolRepository",
-        "projectPath": "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/SchoolRepository.csproj",
-        "packagesPath": "/home/baptiste/.nuget/packages/",
-        "outputPath": "/home/baptiste/Code/Projets/FakeSchool/SchoolRepository/obj/",
+        "projectPath": "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/SchoolRepository.csproj",
+        "packagesPath": "/home/punky/.nuget/packages/",
+        "outputPath": "/home/punky/RiderProjects/SchoolMicroService/SchoolRepository/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "/home/baptiste/.nuget/NuGet/NuGet.Config"
+          "/home/punky/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -80,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.202/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/8.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

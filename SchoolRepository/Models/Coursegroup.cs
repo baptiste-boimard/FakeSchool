@@ -4,10 +4,10 @@ using SchoolRepository.DTO;
 
 namespace SchoolRepository.Models;
 
-public partial class Coursegroup
+public class Coursegroup
 {
     public Guid CoursesId { get; set; }
-    public Course Course { get; set; }
+    //public List<Course> Courses { get; set; }
     public Guid GroupsId { get; set; }
-    public Group Group { get; set; }
+    //public List<Group> Groups { get; set; }
 }

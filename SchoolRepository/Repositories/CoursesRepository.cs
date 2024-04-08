@@ -48,4 +48,14 @@ public class CoursesRepository : ICoursesRepository
   {
     throw new NotImplementedException();
   }
+
+  public static CourseDTO ToDTO(Course course)
+  {
+    return (new CourseDTO
+    {
+      Id = course.Id,
+      Name = course.Name,
+      Date = course.Date
+    });
+  }
 }

@@ -8,6 +8,5 @@ public class StudentDTO
   public string? Name { get; set; } = null;
   public string? Surname { get; set; } = null;
   public DateTime Birthday { get; set; }
-  public Group Group { get; set; }
-  public Course Courses { get; set; }
+  public GroupDTO Group { get; set; }
 }

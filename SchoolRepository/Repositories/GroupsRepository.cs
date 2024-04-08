@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using SchoolRepository.Data;
+using SchoolRepository.DTO;
 using SchoolRepository.Interfaces;
 using SchoolRepository.Models;
 
@@ -47,5 +48,15 @@ public class GroupsRepository : IGroupsRepository
   public bool Save()
   {
     throw new NotImplementedException();
+  }
+
+  public static GroupDTO ToDTO(Group group, IEnumerable<Course> courses)
+  {
+    return (new GroupDTO
+    {
+      Id = group.Id,
+      Name = group.Name,
+      Courses = courses.Select(CoursesRepository.ToDTO).ToArray()
+    });
   }
 }

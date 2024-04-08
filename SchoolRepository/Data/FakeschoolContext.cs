@@ -17,17 +17,12 @@ public partial class FakeschoolContext : DbContext
     }
 
     public virtual DbSet<Course> Courses { get; set; }
-
-    public virtual List<Coursegroup> Coursegroups { get; set; }
-
+    public virtual DbSet<Coursegroup> Coursegroups { get; set; }
     public virtual DbSet<Efmigrationshistory> Efmigrationshistories { get; set; }
     public virtual DbSet<Group> Groups { get; set; }
-
-
     public virtual DbSet<Student> Students { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
-#warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
         => optionsBuilder.UseMySql("server=localhost;database=fakeschool;user=root;password=password", Microsoft.EntityFrameworkCore.ServerVersion.Parse("8.0.36-mysql"));
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)

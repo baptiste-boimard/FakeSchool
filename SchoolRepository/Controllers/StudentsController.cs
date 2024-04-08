@@ -1,14 +1,15 @@
 using Microsoft.AspNetCore.Mvc;
 using SchoolRepository.DTO;
 using SchoolRepository.Interfaces;
+using SchoolRepository.Repositories;
 
 namespace SchoolRepository.Controllers;
 
 public class StudentsController : Controller
 {
-  private readonly IStudentsRepository _studentsRepository;
+  private readonly StudentsRepository _studentsRepository;
 
-  public StudentsController(IStudentsRepository studentsRepository)
+  public StudentsController(StudentsRepository studentsRepository)
   {
     _studentsRepository = studentsRepository;
   }
@@ -22,7 +23,7 @@ public class StudentsController : Controller
   {
     try
     {
-      var response = await _studentsRepository.GetAll();
+      var response =  _studentsRepository.GetAll();
       return Ok(response);
     }
     catch (Exception e)
